@@ -1,0 +1,202 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+nav a {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: .8rem;
+	
+	color: #FFFFFF;
+	font-family: "Arimo", "Assistant", "sans-sefif";
+	
+}
+
+
+/**
+ * Very simple, pared-back, mobile-first, responsive nav.
+ */
+/**
+ * An element (`nav`) in which to house our dropdown.
+ *
+ * 1. Make sure we can’t actually see the absolutely positioned dropdown.
+ */
+ul::before {
+	background-color: #2f3a56;
+}
+#nav {
+	float: right;
+	background-color: #2f3a56;
+	margin: 0;
+	padding:0;
+	top: 0;
+	position: fixed;
+	width: 100vw;
+	border-radius: 0;
+	z-index: 5;
+}
+.responsive-nav {
+	/*margin-right: 1rem;*/
+	float: right;
+	position: relative;
+	z-index: 5;
+	width: 44px;
+	height: 44px;
+	
+	overflow: hidden;
+	/* [1] */
+	
+	cursor: pointer;
+	background-color: #2f3a56;/**
+   * Make the wrapper element lie horizontally on wider viewports.
+   * Nasty RWD makes us undo a lot of stuff :(
+   *//**
+   * Place a hamburger (don’t hate the player, hate the game...) icon
+   * over the top of our nav element.
+   */
+  /**
+   * When we add this class, we simply allow the absolutely positioned
+   * dropdown to be seen.
+   */
+}
+
+@media screen and (min-width: 720px) {
+.responsive-nav {
+	position: static;
+	width: 100%;
+	height: auto;
+	
+	background-color: #2f3a56;
+	padding: 0;
+	margin: 0;
+}
+}
+.responsive-nav:after {
+	content: url(../obrazky/hammenu2.svg);
+	width: 1em;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	margin-top: -8px;
+	margin-right: -8px;/**
+   * Remove the hamburger on wider viewports.
+   */
+}
+
+@media screen and (min-width: 720px) {
+.responsive-nav:after {
+	content: normal;
+	content: none;
+}
+#nav {
+	position:fixed;
+	float: right;
+	background-color: #2f3a56;
+	margin: 0rem;
+	padding: 0;
+	top: 0;
+	border-radius: 0px;
+	width: 100%;
+	
+	z-index: 5;
+}
+nav a {
+	text-decoration: none;
+	
+	font-size: .9rem;
+	padding: .3rem 0rem;
+	color: #FFFFFF;
+}
+	
+	.responsive-nav__list{
+		padding: 0 10% ;
+	}
+	
+	li.responsive-nav__item{
+		border-top:0;
+		padding: .8rem .8rem;
+}
+	li.responsive-nav__item:hover{
+background-color:#3B496D;	
+}
+}
+.responsive-nav.is-open {
+	overflow: visible;/**
+   * Change the hamburger to a cross when the nav is open.
+   */
+}
+.responsive-nav.is-open:after {
+	content: url(../obrazky/x.svg);/**
+   * Remove the cross on wider viewports.
+   * We have to repeat this chunk because of limitations with Sass.
+   */
+}
+
+@media screen and (min-width: 720px) {
+.responsive-nav.is-open:after {
+	content: normal;
+	content: none;
+}
+}
+/**
+ * The absolutely positioned dropdown of links.
+ *
+ * 1. Position the dropdown underneath the trigger.
+ */
+.responsive-nav__list {
+	list-style: none;
+	margin: 0;
+	
+	padding-top: 2.75rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #2f3a56;
+	width: 100vw;
+	border-radius: 0;
+	z-index: -1;/* [1] *//**
+   * Un-position the dropdown on larger viewports.
+   * More nasty RWD undoing stuff :(
+   */
+}
+
+@media screen and (min-width: 720px) {
+.responsive-nav__list {
+	padding: 0 10%;
+	position: static;
+	width: auto;
+/*	display: block;
+	background: none;*/
+	text-align: right;
+}
+}
+.responsive-nav__item {
+	text-align: center;
+	padding: .8rem 0;
+	border-top:#3B496D 1px solid;	
+}
+
+@media screen and (min-width: 720px) {
+.responsive-nav__item {
+	display: inline-block;
+}
+}
+/**
+ * 1. Ensure that the link text lines up with the hamburger.
+ * 2. Ensure that the link text is the same height as the trigger.
+ */
+/*.responsive-nav__link {
+	color: #fff;
+	display: block;
+	white-space: nowrap;
+	padding-right: 14px;
+	 [1] 
+	padding-left: 14px;
+	 [1] 
+	line-height: 44px; [2] 
+	background-color: #2f3a56;
+}*/

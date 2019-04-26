@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+li{display: inline;}
+.souhrn{margin-top: 1000em;}
+
+/**************   GOOGLE MAPY      *****************/
+
+#map {
+        height: 40%;
+		width: 45%
+      }
+     
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+
+
+
+/**************         KONEC  GOOGLE MAPY      *****************/
+/***************     MŮJ POMOCNÝ CSS             **********************/
+input{
+	margin: 5px;
+	
+}
+
+img{
+	
+	
+	          
+	max-height: 100%;
+	max-width: 100%;
+	
+	
+}	
+
+.fotovgalerii{
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+}

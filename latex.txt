@@ -1,0 +1,579 @@
+\documentclass[12pt]{article} 
+\usepackage[czech]{babel} 
+\usepackage{xltxtra} 
+\setlength{\parskip}{1em}
+\usepackage{indentfirst}
+
+
+
+
+
+
+
+\usepackage[left=3.51cm, right=2.51cm, top=2cm, bottom=5.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage[]{graphicx}
+\usepackage{float}
+\begin{document}
+
+
+\pagestyle{empty}
+
+
+
+
+
+
+
+
+
+
+
+\centerline{\LARGE\textbf{STØEDOŠKOLSKÁ ODBORNÁ ÈINNOST}}
+\vspace{18\baselineskip}
+\centerline{\LARGE\textbf{POSIP}}
+\vspace{1\baselineskip}
+\centerline{\large\textbf{Portál silnièních problémù}}
+\vspace{4\baselineskip}
+\centerline{\large\textbf{Kateøina Neprašová}}
+\vspace{.3\baselineskip}
+\centerline{\large\textbf{Jakub Kotas}}
+\vspace{10\baselineskip}
+\centerline{\large\textbf{Zlín 2019}}
+
+
+\newpage
+
+
+\centerline{\LARGE\textbf{STØEDOŠKOLSKÁ ODBORNÁ ÈINNOST}}
+\vspace{2\baselineskip}
+\centerline{\large\textbf{Obor è. 18: Informatika}}
+\vspace{7\baselineskip}
+\centerline{\LARGE\textbf{POSIP}}
+\vspace{1\baselineskip}
+\centerline{\large\textbf{Portál silnièních problémù}}
+\vspace{10\baselineskip}
+
+\begin{tabular}{lp{9cm}}
+
+\large\textbf{Autoøi:} & \normalsize\textbf{Kateøina Neprašová\newline Jakub Kotas}\\ \vspace{0.2cm}
+\large\textbf{Škola:} & \normalsize\textbf{Gymnázium  a~Jazyková škola s~právem státní jazykové zkoušky Zlín, nám. T. G. Masaryka 2734, 760 01}\\ \vspace{0.2cm}
+\large\textbf{Kraj:} & \normalsize\textbf{Zlínskı}\\ \vspace{0.2cm}
+\large\textbf{Konzultant:} & \normalsize\textbf{Mgr. Michal Mikláš}\\ \vspace{0.2cm}
+
+\end{tabular}
+
+\vspace{1\baselineskip}
+\centerline{\large\textbf{Zlín 2019}}
+
+\newpage
+\topmargin 0
+\section*{Prohlášení}
+Prohlašujeme, e jsme naši práci SOÈ vypracovali samostatnì a~pouili jsme
+pouze podklady (literaturu, projekty, SW atd.) uvedené v~seznamu vloeném
+v~práci SOÈ.\par
+Prohlašuji, e tištìná verze a~elektronická verze soutìní práce SOÈ jsou
+shodné.\par
+Nemám závanı dùvod proti zpøístupòování této práce v~souladu se zákonem è.
+121/2000 Sb., o~právu autorském, o~právech souvisejících s~právem autorskım a~
+o~zmìnì nìkterıch zákonù (autorskı zákon) v~platném znìní.\par
+Práce byla dodateènì upravena dne 05. 04. 2019.\par
+\vspace{1\baselineskip}
+
+\begin{tabular}{lp{6cm}}
+
+Ve Zlínì dne 5. 4. 2019\quad podpisy: & …………………………… \newline\newline……………………………
+
+\end{tabular}
+
+\newpage
+
+\section*{Anotace}
+
+Kadı øidiè se dennì na silnicích setkává s~mnostvím nepøehlednıch, neoznaèenıch, znièenıch èi špatnì oznaèení úsekù. Vìtšina z~nich se však rozhodne tento problém neøešit a~smíøit se s~ním, nebo na nìj neustále nadávat mezi pøáteli. V~dnešní dobì jsou lidé zvyklí na rychlı zpùsob ivota, a~tak jim portál POSIP dává k~dispozici monost se jednoduše a~rychle vyjádøit k~silnièním problémùm. Portál však také mùe slouit správcùm silnic jako zpùsob, jak se snadno dozvìdìt o~místì, na kterém je problém, kterı by mìli vyøešit.\par
+
+\section*{Klíèová slova}
+silnièní problém, web, správce silnic, doprava, HTML, CSS, PHP, javascript, google maps API, MySQL
+\par
+\newpage
+\section*{Anotation}
+Every driver experiences every day many struggles on the road. Wheather it is bad wisibility through the crossing, badly marked crossing or demaged road. The most of them though, just ignore it or keep complaining about it among friends in a~bar. People nowadays lives in hury and the POSIP is here to provide them the way how to tell others what their problem is and also this way help others. Moreover, road keepers will be able to use POSIP to get to know where some issue is and, by using these data, to provide faster attempt to repair the issue.
+\par
+
+\section*{Keywords}
+road issue, website, road administrator, transport, HTML, CSS, PHP, javascript, google maps API, MySQL
+\par
+\newpage
+\pagestyle{plain}     
+\setcounter{page}{1} 
+\pagenumbering{Roman}
+\tableofcontents
+
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\section{ÚVOD}
+Na úvod bychom rádi nastínili, k~èemu je projekt POSIP urèen a~jakımi problémy se budeme v~práci zabıvat. Hlavní cíl této práce je optimalizace správy pozemních komunikací, dále má portál za úkol zprostøedkovávat informace od a~pro uivatele, které jsou posléze k~dispozici správcùm a~pracovníkùm silnic, jim umoní zrychlení snahy o~nápravu silnièních problémù.\par
+
+V~práci rozebereme fungování a~principy naší aplikace, krátce se vyjádøíme i~k~pouitım technologiím, kterımi jsou HTML, CSS, PHP, MySQL, javascript a~google maps API. Naznaèíme strukturu a~postupnì se vyjádøíme ke kadé sloce našeho webu, kterı máme v~základu rozdìlenı na domovskou stránku, formuláø, galerii, stránku nápovìdy a~stránku o~projektu. Popíšeme, jak fungují formuláøe našeho portálu a~jakım zpùsobem jsou data importována do naší databáze. Budeme se vìnovat i~fungování nahrávání fotografií a~vytváøení mapy za uití aplikace google maps API. Nastíníme základní funkce našeho webu, tedy získávání zemìpisnıch údajù z~fotografií i~pøímo z~mapy.
+V~nemalém rozsahu zde bude rozebrán i~design, kterı je dùleitou a~nedílnou souèástí tohoto portálu a~díky kterému je pro uivatele prostøedí webu mnohem pøíjemnìjší. Nakonec analyzujeme monı budoucí vıvoj tohoto projektu.
+\newpage
+
+\section{TEORETICKÁ ÈÁST}
+\subsection{Fungování aplikace pro bìného uivatele}
+V~momentì, kdy se uivatel ocitne na hlavní stránce našeho portálu, se mu nabídne hned nìkolik moností. Mùe buï rovnou nahrát novı problém, prohlédnout si galerii, nebo se pøi kliknutí na obrázek s~nápovìdou dostat na stránku s~nápovìdou. Také si mùe pøes hlavní menu otevøít stránku „O~projektu“, kde se mùe dozvìdìt, co je úèelem a~cílem našeho portálu.\par
+Kdy se tedy uivatel rozhodne kliknout na tlaèítko „NAHRÁT PROBLÉM“, tak mu aplikace dá na vıbìr, zda jej chce nahrát s~fotografií, èi bez fotografie. Zároveò jej pøitom instruuje pár vìtami o~jeho budoucích krocích, aby si mohl bıt jistı ve svém vıbìru a~nahrávání.\par
+Po kliknutí na monost „NAHRÁT S~FOTOGRAFIÍ“ dojde ke zviditelnìní monosti vybrání souboru fotografie uivatelem, kterou mùe pohodlnì vybrat ze svého zaøízení. Následnì uivatel klikne na volbu „Nahrát“ a~je pøesmìrován na stránku s~formuláøem. Obsahuje-li fotografie všechna potøebná data, je zde uivateli zobrazena mapa, která mu umoní upøesnit pozici události na mapì a~je mu nabídnut formuláø skládající se ze dvou fází. V~první fázi uivatel vybírá povahu situace, její akutnost a~je mu umonìno pøidání svého vlastního komentáøe. S~druhou fází jsou mu nabídnuty monosti, které vedou k~upøesnìní povahy situace. Napøíklad mùe zvolit za povahu situace „chybìjící znaèení“ a~jako upøesnìní zvolí monost „dodatkové tabulky“ z~nabídnutıch moností. Po kliknutí na „Nahrát“ je nahlášení i~s~fotografií uloeno a~zveøejnìno v~galerii.\par
+Pøípad, kdy uivatel volí monost „NAHRÁT BEZ FOTOGRAFIE“ se liší pouze faktem, e uivatel fotografii nenahrává. Rovnou mu je proto nabídnuta mapa ÈR, aby z~ní vybral pozici, na které zaregistroval danı problém a~následuje vyplnìní stejného formuláøe jako pøi volbì „NAHRÁT S~FOTOGRAFIÍ“\par
+Sekce portálu „GALERIE“ slouí k~zobrazení ji nahlášenıch pøípadù. Uivateli se ukáe mapa s~vyznaèenımi špendlíky na pozicích døíve nahlášenıch problémù. Pøi kliknutí na vybranı špendlík se zde zobrazí základní informace o~daném problému. Pomocí vyhledávaèe a~filtru mùe vyhledávat problémy v~místì jeho zájmu.\par
+U jednotlivıch vıpisù problémù v galerii je uivateli dostupné hodnocení, tedy palec nahoru a palec dolu, kde má kadı monost vyjádøit svùj názor na uiteènost pøíspìvku. Zde se také vyskytuje tlaèítko „Vyøešeno“, kterım lze problém z galerie skrıt. \par
+
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=.3]{vypisgall.jpg}
+  \caption{Ukázka vıpisu problému v galerii}
+  \label{fig:ukazkavypisku}
+\end{figure}
+
+Nakonec je zde sekce dostupná hned z~nìkolika jinıch sekcí webu. Jedná se o~sekci, která pomáhá uivatelùm øešit jejich problémy. Dostanou se zde k~základním informacím o~projektu a~odpovìdím na bìné otázky. V~pøípadì, kdy by nás uivatel chtìl kontaktovat, dáváme zde k~dispozici jak kontakt na nás, tak i~formuláø, do nìho mùe napsat svùj problém a~pøípadnì nám na sebe zanechat e-mail.
+Ve všech sekcích webu má uivatel dostupné hlavní menu a~patièku s~dùleitımi informacemi, co pøispívá k~pøíjemnìjšímu záitku pøi pouívání portálu POSIP.\par
+
+\subsection{HTML}
+ 
+HTML (Hypertext Markup Language), je znaèkovací jazyk urèenı pro tvorbu webovıch stránek, co jsou dokumenty s~informacemi na internetu, které jsou pøístupné pomocí webového prohlíeèe a~jsou mezi sebou propojeny hypertextovımi odkazy. \par
+
+Znaèky jazyka HTML se nazıvají „tagy“. Tìmito znaèkami se HTML kód oddìluje od prostého textu, jinak toti jako prostı text vypadá. Pomocí „tagù“ se v~kódu dìlí stránka na rùzné oddíly, pøidávají se obrázky, vytváøejí odkazy nebo seznamy, rùzné úrovnì nadpisù a~mnoho jiného. \par
+
+HTML kód je uloen jako text, kterı uivatelé prohlíí skrz internetové prohlíeèe, kterı podle „tagù“ stránky vykreslí tak, jak je to napsáno v~kódu. \par
+
+\subsection{CSS}
+ \par
+CSS (Cascading Style Sheets) je technologie pouívaná pro popis zpùsobu zobrazení elementù na webovıch stránkách. Tento jazyk navazuje na znaèkovací jazyk HTML a~také je vykreslován internetovımi prohlíeèi. \par
+
+Pomocí CSS urèujeme celkovı vzhled obsahu našich webovıch stránek, mùeme zde urèovat barvy, velikost, pozici, vıplò, písma, animace atp. Díky lepšímu vzhledu se pak návštìvníci na webové stránky vrací radìji, protoe je pro nì toto prostøedí pøíjemnìjší. \par
+
+Díky CSS mùeme urèovat odlišnı vzhled webu na zaøízeních rùznıch velikostí (smartphone, tablet, stolní poèítaèe), k~tomu nám slouí „CSS Media Queries“, podmínky, které nám umoòují aplikovat rùzná CSS pravidla v~rùznıch technickıch kontextech. Toto pravidlo nazıváme „breakpoint“, které se skládá z~vlastností ( \texttt{min-width},  \texttt{max-width}, aj.) a~èíselné hodnoty vlastnosti (920 px, 50 em, atp.). Naše stránky jsou optimalizované pro rùzná zaøízení díky technologii „responzivní webdesign“.\par
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=1.3]{mock1.jpg}
+  \caption{Zobrazení stránky na mobilním zaøízení}
+  \label{fig:mobileexample}
+\end{figure}
+
+
+\subsection{PHP}
+ \par
+PHP je programovací jazyk, pomocí kterého lze vytváøet dynamické webové stránky. Vıstupem pro prohlíeè je však pouze zdrojovı kód v~jazyce HTML, take uivatel vùbec zdrojovı kód v~jazyce PHP nevidí. Všechno je tedy vytváøeno na serveru, kde je skript uloen. Jedna z~jeho pøedních vıhod spoèívá v~monosti vytváøení funkcí, take pokud se nìjaká èást kódu na webu objeví vícekrát, mùeme z~ní vytvoøit funkci a~pak na ni pouze odkázat, èím mùeme znatelnì urychlit proces tvorby webu. My jsme zvolili PHP jako náš hlavní programovací jazyk, kvùli monosti práce s~MySQL databázemi a~vùbec moností vytvoøit v~nìm podobnì komplexní webovou aplikaci jakou je projekt POSIP.^{[1]}\par
+
+
+
+\subsection{JavaScript} 
+ 
+JavaScript je programovací jazyk operující pøímo v~prohlíeèi na dané webové stránce. Je tak nejdynamiètìjším øešením pro webové stránky. Dovoluje toti mìnit údaje, které uivatel vidí v~reálném èase. Hlavním dùvodem, proè jsme se však rozhodli pro JavaScript je orientace google maps API právì na JavaScript.^{[2]}
+
+\subsection{Porovnání s~ostatními weby}
+Pro porovnání našeho projektu s~ostatními jsme vybrali jeden zahranièní a~dva èeské portály, které se také zabıvají dopravními problémy. \par
+Zahranièní portál bìí pod záštitou Londınské organizace „Transport for London“, mùeme jej nalézt na tfl.gov.uk. Zde mohou uivatelé pomocí formuláøe nahlásit silnièní problémy, tento formuláø je pøehlednı s~jednoduchım, ale pìknım vzhledem. V~základu zde uivatelé vybírají z~tìchto druhù hlášení: dotaz, stínost, pozitivní zpìtná vazba, problémy bezpeènosti a~metody. Dále stránka poaduje údaje o~zadavateli. Následuje volba z:~semafory a~signály, závada na ulici, problematické silnièní práce, zmìny infrastruktury, parkování, kamerovı systém, jiné, a~zadávání pozice do mapy. Nakonec uivatel vkládá datum, obrázek a~vlastní komentáø. \par
+Tento Londınskı systém je oproti našemu více zamìøen na uivatele a~jejich problémy, náš je svımi volbami pøístupnìjší pro správce a~opraváøe silnic. Zadávání do našeho systému je také podstatnì rychlejší, jeliko nevyaduje tolik informací a~polohu problému zvládá detekovat z~fotografie, pokud tuto informaci fotografie obsahuje. Poslední velkı rozdíl mezi tìmito systémy je, e náš obsahuje galerii, kde si uivatelé mohou prohlédnout všechna hlášení a~vyhledávat v~nich. \par
+
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=1.5]{mock2.jpg}
+  \caption{Stránka galerie našeho portálu}
+  \label{fig:galleryonimac}
+\end{figure}
+ \par
+
+První èeskı portál je spuštìn pod záštitou øeditelství silnic a~dálnic v~ÈR dopravniinfo.cz, design je pìknı a~web pùsobí pomìrnì pøehlednì. Zde mohou události zapisovat pouze registrovaní uivatelé. Formuláø je a pøíliš jednoduchı, vyplòuje se zde pouze datum, u~typu události se volí jen z~nehoda, uzavírka, ostatní, dále se zadává mìsto a~poloha na mapì, poslední je okno pro popis události. Nejvíce pøíspìvkù v~galerii problémù je pøímo od samotného ØSD, kde je specifikace problémù rozšíøenìjší, ne od zadanıch uivatelù. Galerie má monost filtrování dle mìsta, èasu, názvu komunikace a~typu události. Je zde také monost zobrazit pouze pøíspìvky z~jednoho z~posledních sedmi dnù. \par
+Náš systém je oproti tomuto systému lepší v~tom, e nenutí uivatele vypisovat místo polohy, dokáe mìsto, kraj a~dokonce i~ulici vyèíst ze zadané polohy. Náš systém je také více zamìøen na správce silnic. Galerie problémù tohoto portálu neobsahuje mapu se všemi problémy, co si myslím, e by mohlo tento portál posunout na vyšší úroveò. Tøídìní je zde sloitìjší a~mùe uivatele mást, pøímé vyhledávání na našem portálu je rychlejší a~jednodušší. Hlavní vıhodou tohoto portálu je synchronizace se zaøízeními, která po celé ÈR ØSD má, na portálu tedy mùe uivatel získat údaje o~poètu dostupnıch parkovacích míst, snímky z~kamer na dálnicích, aktuální informace o~nehodách atp. \par
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=.575]{DopravníinfoRSD-porovnani.jpg}
+  \caption{Galerie pøípadù portálu dopravniinfo.cz}
+  \label{fig:dopravniinfo}
+\end{figure}
+ \par
+
+Posledním vybranım portálem pro porovnání s~tím naším je vymoly.cz, kterı funguje pod záštitou organizace BESIP. Tento web je pìknı a~pøehlednı, zamìøuje se zejména na díry v~cestách, jak u z~jeho názvu vypovídá. U~pøíspìvkù jsou informace o~hloubce vımolu, jeho adrese a~komentáøi uivatele.
+Náš portál je podobnı jako vymoly.cz, avšak my se nezamìøujeme jen na vımoly, ale na všechny silnièní problémy, se kterımi se mohou uivatelé na svıch cestách setkat.  \par
+\newpage
+\section{PRAKTICKÁ ÈÁST}
+\subsection{Práce s~databází}
+V~aplikaci phpMyAdmin jsme si vytvoøili databázi s~nìkolika tabulkami, do kterıch postupnì ukládáme získané informace, je posléze èteme a~vypisujeme v~galerii. Databáze jsou tedy jedna z~nejdùleitìjších èástí našeho projektu. Databáze projektu se skládá z~pìti hlavních tabulek:
+\begin{itemize}
+\item aboutphenomenon (tabulka se všemi problémy)
+\item images (tabulka s~obrázky)
+\item issues (tabulka druhù problémù)
+\item redableposition (zde je zapsána nesouøadnicová adresa)
+\item specials (tabulka obsahující specifikace problémù)
+\end{itemize} \par
+
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=1]{aboutphdatabasis.jpg}
+  \caption{Zápis v~tabulce „aboutphenomenon“}
+  \label{fig:aboutphenomenon}
+\end{figure}
+
+Tabulky jsou navzájem propojeny pomocí primárních klíèù, aby bylo mono získávat informace napøíè tabulkami. \par
+
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=.7]{issuestable.jpg}
+  \caption{Obsah tabulky „issues“}
+  \label{fig:issuestable}
+\end{figure}
+
+V~druhé èásti našeho formuláøe pracujeme s~propojením tabulek \textit{issues} a~\textit{specials} pomocí \textit{issuid}. Vypisujeme pouze ty øádky tabulky, které mají pøiøazené stejné \textit{issuid}, jaké má pùvodní zvolená poloka z~tabulky \textit{issues}.
+
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=.7]{specialstable.jpg}
+  \caption{Tabulka „specials“}
+  \label{fig:specials}
+\end{figure}
+
+Pokadé, kdy potøebujeme zapsat nebo naèíst nìjaká data z~databáze, musíme s~poadovanou databází navázat kontakt a~pøihlásit se do ní. K~tomu nám poslouí funkce \texttt{mysqli\_connect}, do ní vloíme ètyøi argumenty. Prvním bude název serveru, na nìm se databáze nachází, poté uivatelské jméno pro pøístup, následnì heslo a~nakonec jméno samotné databáze. Pro pozdìjší pouití si vısledek této funkce uloíme do promìnné. K~pøipojování k~databázi si v~naší knihovnì vytvoøíme funkci \textit{createTheConnection}. \par
+
+Poté ji mùeme s~databází komunikovat a~pracovat s~ní. Za tímto úèelem uíváme funkce \allowbreak \texttt{mysqli\_query}, která pro své fungování potøebuje dva argumenty. Prvním je námi vytvoøená promìnná s~vısledkem funkce \texttt{mysqli\_connect} a~druhım je SQL pøíkaz. Pomocí dotazù SQL komunikujeme s~MySQL databází. V~pøípadì kdy chceme napøíklad zobrazit zemìpisné délky a~šíøky všech uloenıch údajù v~tabulce \texttt{aboutphenomenon}, tak pouijeme pøíkaz:\par
+\begin{verbatim}
+    SELECT latitude, longitude FROM aboutphenomenon
+\end{verbatim} \par
+Dalším a~èastım pøíkladem by mohl bıt pøípad, kdy potøebujeme zobrazit informace napøíè tabulkami. Hledáme tedy zemìpisné souøadnice všech uloenıch záznamù a~chceme k~nim pøiøadit cestu k~fotografii, která s~nimi souvisí. Do SQL dotazu tedy pøidáme následující:
+\begin{verbatim}
+    LEFT JOIN images ON aboutphenomenon.idphoto = images.idphoto
+\end{verbatim} \par
+Pøíkazem øíkáme: „Pøipoj tabulku images k~tabulce \texttt{aboutphenomenon}, kde atribut \texttt{idphoto} je primárním klíèem a~je tedy stejnı jako atribut \texttt{idphoto} v~tabulce \texttt{images}. \par
+
+V pøípadì, e v databázi údaje aktualizujeme, k èemu dochází napøíklad v pøípadì, e uivatel u pøíspìvku v galerii klikne na tlaèítko „Vyøešeno“, pouíváme dotaz \texttt{UPDATE}. Abychom však mìli co upravovat, musíme do databáze nejprve vloit informace, které jsme získali z formuláøe. K tomu uíváme dotaz \texttt{INSERT}. 
+
+\subsection{Základní struktura webu}
+Na zaèátku si k~našemu základnímu souboru \texttt{index.php} vytvoøíme i~soubor slouící jako knihovna funkcí \texttt{library.php} a~soubory pro styly: \texttt{css.css} pro obecné styly, \texttt{navcss.css} pro styly navigace, \texttt{checks.css} pro formuláø, \texttt{gallery.css} pro styly galerie a~\texttt{mapcss.css} pro mapu. K~souboru si také pøipojíme odkazy na písma \textit{Assistant}, \textit{Arimo} a~\textit{Roboto}. 
+
+\begin{verbatim}
+	<link href="CSS/css.css" rel="stylesheet" type="text/css">
+	<link href="CSS/mapcss.css" rel="stylesheet" type="text/css">
+	<link href="CSS/navcss.css" rel="stylesheet" type="text/css">
+	<link href="CSS/checkscss.css" rel="stylesheet" type="text/css">
+	<link href="CSS/gallery.css" rel="stylesheet" type="text/css">
+\end{verbatim}
+
+Základní struktura webu je zobrazení horního navigaèního menu, obsahu a~patièky. Obsah se zobrazuje na základì definovanıch sekcí, na které odkazuje naše navigace. Tìmito sekcemi jsou domovská stránka, formuláø, galerie, stránka nápovìdy a~stránka o~projektu.
+\begin{verbatim}
+if ( isset( $_REQUEST[ "section" ] ) ) {
+	$section = $_REQUEST[ "section" ];
+}
+switch ( $section ) {
+	case "homepage":
+		$pagename = "POSIP";
+		break;
+	case "gallery":
+		$pagename = "galerie";
+		break;
+	case "form":
+		$pagename = "POSIP-formuláø";
+		break;
+	case "about":
+		$pagename = "O~projektu";
+		break;
+	case "help":
+		$pagename = "Pomoc";
+		break;
+	default:
+		$section = "homepage";
+		$pagename = "POSIP";
+}
+\end{verbatim}\par
+  
+
+\subsubsection{Navigaèní menu}
+
+
+Navigaèní menu se bude zobrazovat na kadé stránce, je tedy zapsáno v~souboru \texttt{index.php}. Navigace pracuje se sekcemi našeho webu, mùeme ji rozdìlit na dvì èásti, první je verze plochy poèítaèe, psaná do \texttt{@media screen and (min-width: 720px)}, druhá mobilní.\par
+
+\begin{verbatim}
+		<nav class="responsive-nav" id="js-responsive-nav">
+			<ul class="responsive-nav__list">
+				<a~href="index.php?section=homepage">
+					<li class="responsive-nav__item">Nahrát</li></a>
+				<a~href="index.php?section=gallery">
+					<li class="responsive-nav__item">Galerie</li></a>
+				<a~href="index.php?section=about">
+					<li class="responsive-nav__item">O~projektu</li></a>
+			</ul>
+		</nav>
+\end{verbatim} \par
+Naše navigaèní menu je obaleno v~\texttt{div id="nav"}, tagu navigace je pøidìlena tøída s~názvem \textit{responsive-nav} a~id \textit{js-responsive-nav}. Poloky v~našem menu máme zapsány jako poloky seznamu, kterému je pøidìlena tøída \textit{responsive-nav\_\_list}, jim jsme v~CSS nastavili list-style: none, tedy ádnı styl seznamu, co nás zbavuje odráek. Jednotlivé poloky seznamu mají také pøidìlenou tøídu \textit{responsive-nav\_\_item}. \par
+
+K~naší navigaci pouíváme javascript, kterı pøidá tøídu \textit{responsive-nav.is-open} kdy je stisknuto navigaèní tlaèítko a~kdy jsme ve vıøezu menším ne javascriptem urèené\texttt{responsiveNavBreakpoint}, kterı je nastaven na hodnotu 720 px. \par
+
+Šíøku navigace nastavujeme pro id nav, je nastavena na 100 vw, co znamená 100 \% šíøky obrazovky. Pozici jsme nastavili fixovanou, aby menu bylo na obrazovce stále. Pozadí je nastaveno na tmavomodrou barvu \#2f3a56 a~všechny okraje máme nastaveny na hodnotu 0. \par
+
+Pro odkaz v~navigaci nastavíme písmo Arimo, bílou barvu, transformováno na verzálky. V~mobilním zaøízení písmu nastavíme velikost 0,8 rem, pro stolní poèítaèe 0,9 rem. \par
+
+Tøídì \textit{responsive-nav} našeho seznamu definujeme 100\% šíøku a~automatickou vıšku, tmavomodré pozadí \#2f3a56 a~statickou pozici pro poèítaèovou verzi. V~mobilní verzi se nám z~této tøídy stane ètverec, kterı uvnitø bude mít ikonu menu. Nastavíme \texttt{margin-right:\;1rem}, šíøku a~vıšku na 44 px, pozici na relativní. Co je dùleité, je nastavení pøetékání na skryté, jinak by se nám vysunující obsah menu zobrazoval u teï, a~to nechceme. Pouíváme zde také z-index, nastavíme ho na 5, tento atribut urèuje uspoøádání elementù na ose \textit{Z}. \par
+
+Pro mobilní verzi tøídy \textit{responsive-nav} pøidáme i~zápis tøídy s~atributem \texttt{:after}. Sem pøidáme do obsahu tøídy naši ikonu menu pomocí \texttt{content:\;url()}. Aby naše ikona byla pøesnì uprostøed ètverce, nastavíme také \texttt{top:\;50\%,\;right:\;50\%,\;margin-top:\allowbreak -8px,\;margin-right:\;-8px.} \par
+
+Teï pøichází na øadu styl otevøeného stavu navigace, ten zapisujeme do javascriptem vytvoøené tøídy \textit{responsive-nav.is-open}. Nastavíme zde viditelné pøetékání, abychom ji vidìli obsah menu. V~tøídì \textit{responsive-nav.is-open:after} nahradíme ikonu menu za køíek, opìt pomocí \texttt{content:\;url()}. Pro poèítaèovou verzi je poté nutné nastavit \texttt{content:\;none}, abychom zde ikony nemìli. \par
+
+Rozevíracímu seznamu odkazù v~mobilní verzi musíme urèit styl, jak budou odkazy po rozevøení vypadat. Tøídì \textit{responsive-nav\_\_list} pøiøadíme \texttt{list-style:\;none}, odkazy se budou zobrazovat bez odráek. Dále nastavíme \texttt{padding-top} na 2.75 rem, co zajistí, aby øádek s~ikonou køíku zùstal prázdnı. Nastavení absolutní pozice nám zase zajistí, e se seznam nebude nikam hıbat pøi pohybu na stránce pod ním. Šíøku okna s~odkazy nastavíme na 100 vw (100 \% šíøky okna prohlíeèe pouívaného zaøízení). Pro poèítaèovou verzi zde zmìníme pozici na statickou, a~\texttt{text-align:\;right}, abychom mìli poloky menu v~pravé èásti obrazovky. \par
+
+Jednotlivım polokám seznamu s~tøídou \textit{responsive-nav\_\_item} urèíme pro mobilní verzi zarovnání textu na støed, padding z~vrchu a~dole .8rem, ze stran 0. Na vrchní stranì kadé poloky pro vizuální oddìlení jednotlivıch prvkù seznamu definujeme 1 px širokou linku modrého odstínu: \#3B496D. Pro poèítaèovou verzi tuto linku zrušíme, díky \texttt{display:\;inline-block} se nám poloky nezobrazují pod sebou, ale vedle sebe.^{[3]} \par
+
+\subsubsection{Patièka}
+Patièka nám slouí jako rozcestník s~údaji, kterı se zobrazí na kadé stránce našeho webu, máme ji zapsanou v~souboru \texttt{index.php}. Zaèneme párovım tagem patièky, uvnitø nìj vytvoøíme oddíl s~id \texttt{footerflex}, kterému v~CSS urèíme vlastnosti pro mobilní zobrazení \texttt{display:\;flex,\;flex-direction:\allowbreak\;column,\allowbreak\;justify-content:\;space-around\allowbreak margin:\;0 5\%} a~\texttt{display:\;flex,\;flex-direction:\;row, \allowbreak margin:\;0\;20\% \allowbreak justify-co \newline -ntent:\;space-between} pro poèítaèové zobrazení. Díky flexboxu se jednotlivá okna na poèítaèi zobrazená vedle sebe zalomí na mobilních zaøízeních pod sebe. \par
+
+Uvnitø tohoto oddílu máme tøi oddíly tøídy \texttt{footer\_flex\_element}, jejich obsah je zapsán jako poloky seznamu. Do prvního oddílu umístíme odkazy na stránku nápovìdy, druhı se bude tıkat kontaktù a~tøetí je pro externí odkazy. \par
+\begin{verbatim}
+	<div class="footer_flex_element">
+		<ul><li><a href="index.php?section=help#help">
+		Poøebujete pomoci?</a></li>
+		<li><a href="index.php?section=help#uploadproblems">
+		Potíe s~nahráváním</a></li>
+		<li><a href="index.php?section=help#toreport">
+		Nahlásit chybu systému</a></li></ul>
+	</div>
+\end{verbatim} \par
+Celé patièce pøiøadíme v~CSS modré pozadí a~bílou barvu textu. Seznamu v~patièce urèíme \texttt{list-style:\;none,\;background:\;none}. Tøídì \texttt{footer\_flex\_element} pøipíšeme pro zobrazení v~mobilních zaøízeních oddìlovací linku \texttt{border-bottom:\;solid\allowbreak rgba(47,58,86,0.80)\;1px}. Pro odkazy pøidìlíme \texttt{text-decoration:\;none;} \par
+
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=1]{footerHD.jpg}
+  \caption{Vzhled patièky na mobilním zaøízení.}
+  \label{fig:footer}
+
+\end{figure}
+
+\subsection{Úvodní stránka}
+Pro obsah naší úvodní stránky si zavedeme funkci s~názvem \textit{thequestionbuble}, kde hned na zaèátek urèíme, e se obsah zobrazí, pouze je-li sekce rovna sekci \texttt{homepage}. \par
+
+Hned po navigaci je první èástí naší úvodní stránky oddíl tøídy \textit{guidepost}. Této tøídì v~CSS urèíme jako pozadí náš soubor s~SVG ilustrací na pozadí, dále \texttt{margin-top:\;0px,\allowbreak\;background-size:\;cover,\;\allowbreak background-position:\;top,\;align-content:\;center}. \newline Dodáme údaje o~velikosti, šíøka bude 100 \% a~vıška 250 px pro mobilní a~400 px pro poèítaèové zobrazení. \par
+
+Následuje oddíl s~nadpisy stránky a~tlaèítky, kterému pøidìlíme id \textit{guidetxt}. Sem napíšeme náš hlavní nadpis a~podnadpis i~s~tlaèítky, které uivatele smìrují k~nahrávání problémù nebo do galerie. Hlavnímu nadpisu pøiøadíme \texttt{font-family:\;"Arimo","sans-\newline -serif"} o~velikosti 3 rem. Podnadpis bude mít také písmo \textit{Arimo}, avšak o~velikosti 1 rem, protoe tento nápis u není zkratka a~nepíše se verzálkami, pøidáme také \texttt{text-transform:\;uppercase}. Oddílu s~tlaèítky urèíme id \textit{index-buttons}, pro kterı definujeme tato pravidla v~CSS: \texttt{display: flex; align-content: center; justify-\newline-content: center; flex-direction: row; flex-wrap: wrap;}. První je tlaèítko\newline „Nahrát problém“, jeho adresa smìøuje k~oddílu nahrávání, druhé tlaèítko „Galerie“ smìøuje do sekce galerie, tøetí tlaèítko „Nápovìda“ slouí jako zrychlená cesta ke stránce s~nápovìdou. Všechna tato tlaèítka obsahují ikonu, která je zde vloena pomocí SVG kódu. Následuje oddíl se vstupem do nahrávání, tomu urèíme id \textit{upload\_mit\_ohne}. Zde je nadpis \texttt{<h3>Nahrát\;novı\;problém</h3>}, pod kterım se nachází krátkı popis nahrávání. \par
+
+Poslední v~tomto oddílu jsou tlaèítka „Nahrát s~fotografií“ a~„Nahrát bez fotografie“, i~tato tlaèítka obsahují ikony vloené pomocí SVG kódu. Tøídám cest ikon ve všech našich tlaèítkách nastavíme vıplò, kromì tlaèítka „Nahrát bez fotografie“, kterému urèíme tmavomodrou, budou mít všechna bílou. Dále jim v~CSS nastavíme všem \texttt{color: \#fff; padding: .3rem 0 1rem 0;\allowbreak height: 105px; \allowbreak width: 105px; \allowbreak background: \#fff; \newline text-transform: uppercase;\allowbreak border: rgba(255,255,255, \allowbreak 1.00) 3px dotted; \newline border-radius: 100\%; \allowbreak font-family: 'Arimo',\allowbreak sans-serif; \allowbreak font-weight: 500;\newline font-size:.7rem; \allowbreak cursor:pointer;}. Jednotlivì jim pak urèíme barvu pozadí.  \par
+\begin{verbatim}
+		<form action="index.php?section=form&&signpost=uploadthephoto" 
+		method="post" enctype="multipart/form-data">
+				<input type="file" name="file" id="choosefile">
+				<input id="uploadimg" type="submit" name="upload" value="Nahrát">
+		</form>
+\end{verbatim}
+\subsection{Formuláø} \par
+Pomocí formuláøe získáváme údaje, které vypisujeme v~sekci galerie. V~základu máme dva druhy formuláøe, souèástí prvního je nahrávání obrázku, ve druhém uivatel pøipíná špendlík na místo problému v~mapì. Souèástí obou je však formuláø s~doplòujícími údaji o~místì. \par
+
+\subsubsection{Nahrávání obrázku} \par
+
+Monost nahrát novı obrázek se uivateli zobrazí po kliknutí na tlaèítko Nahrát s~fotografií, které se nachází na naší domovské stránce. Tlaèítko vede na adresu \texttt{index.php?\newline section=homepage\&\&signpost =\allowbreak uploadthephoto\#upload\_photo\_div}, na ní se zobrazí formuláø pro nahrání fotografie. O~zobrazení formuláøe na stránce se stará podmínka: 
+\begin{verbatim}
+    if(($section=="homepage") && ($signpost=="uploadthephoto"))
+\end{verbatim} \par
+Tato podmínka zjišuje, zda se promìnné, ve kterıch jsou uloeny informace získané z~aktuální adresy stránky pomocí pole \texttt{\$\_REQUEST} souboru \texttt{index.php} takto: \texttt{if(isset(\$\_REQUEST\allowbreak["section"]))\allowbreak {\$section\allowbreak =\allowbreak \$\_REQUEST["section"];}} a~ také takto: \texttt{if(isset(\$\_REQUEST\allowbreak[\allowbreak"signpost"\allowbreak\;]\allowbreak))\allowbreak\;{\$signpost\allowbreak\;=\;\$\_REQUEST\allowbreak [\allowbreak\;\allowbreak "signpost"\allowbreak\;]}}, rovnají poadované hodnotì. Pokud je podmínka splnìna, zobrazí se formuláø metody \texttt{post}, kterı sestává ze dvou vstupních hodnot, jeden je typu \texttt{file}, ten umoní uivateli vyhledat místní soubor – fotografii, a~druhı typu \texttt{submit}, kterı uloí vısledek formuláøe do polí \texttt{\$\_POST} a~\texttt{\$\_FILES}. Fotografie se po úspìšném vyplnìní formuláøe nachází ve sloce s~doèasnımi soubory. \par
+
+Zároveò s~odesláním formuláøe je uivatel pøesmìrován na stránku s~hlavním formuláøem. V~téro chvíli pomocí podmínky \texttt{if(in\_array(\;\$fileType, \$allowTypes))}, kde \texttt{\$fileType} je pøípona názvu nahraného souboru a~\texttt{\$allowTypes} je námi vytvoøené pole, ve kterém jsou napsány povolené pøípony, ovìøujeme zda je typ nahraného souboru správnı a~povolenı.^{[4]} \par
+
+Dále z~fotografie naèteme tzv. exif data, ve kterıch mimo jiné najdeme i~údaje o~poloze, na které byla fotografie poøízena, pokud zaøízení, jím byla fotografie poøízena, umoòuje ukládání GPS údajù. Tato data uloíme do pole, abychom je mohli procházet a~pouívat. Najdeme zde tedy zemìpisné koordináty, které jsou však zapsány v~podílovém tvaru pro zemìpisné stupnì, minuty i~sekundy. Pro pohodlné uívání s~google maps API je dobré si vypoèítat vısledné souøadnice pouze jako dvì desetinná èísla, toho docílíme vydìlením podílovıch tvarù souøadnic a~seètením stupòù, minut vydìlenıch 60 a~sekund vydìlenıch 3600. Následnì si takto získané údaje uloíme do dvou promìnnıch, jedna pro zemìpisnou délku a~jednu pro zemìpisnou šíøku. V~budoucích verzích projektu pøi pouití mimo Evropu by bylo ádoucí doplnit mínus pøed souøadnice, které se nachází na jiní, nebo západní polokouli. \par
+
+Získané souøadnice následnì vloíme polí pro zemìpisnou šíøku a~délku ve formuláøi, která jsou nastavena jako „pouze pro ètení“. Vzhledem k~nepøesnosti, kterou jsme pozorovali pøi zkoumání GPS údajù v~exif souborech našich fotografií poøízenımi pomocí nám dostupné techniky musíme vyzvat uivatele k~upøesnìní pozice z~mapy, tudí vedle formuláøe s~pøedvyplnìnımi souøadnicemi vloíme google API mapu speciálnì definovanou pro tento úèel tak, aby se pøiblíila na polohu souøadnic urèenıch pomocí fotky, a~na tyto souøadnice pøidáme špendlík. Vzhledem k~relativnì malé nepøesnosti našich mìøení, si mùeme dovolit mapu pøiblíit na úroveò, kdy lze pohodlnì vybrat pøesnou pozici. Uivatel pak mùe upøesnit pozici pouhım kliknutím. Je tedy nutno pomocí javascriptu definovat mapu viz kapitola o~definování map a~získávání zemìpisnıch koordinátù z~map.^{[5]} \par
+
+Nakonec musíme pøesunout fotografii z~doèasného úloištì na místo, z~nìho ji budeme zobrazovat uivatelùm v~galerii. Toho docílíme funkcí \textit{move\_uploaded\_file} takto: \texttt{move\_uploaded\_file\allowbreak(\;\$\_FILES[\;"file"\;][\;"tmp\_name"\;],\;\$targetFilePath)}. První argument oznaèuje doèasné úloištì a~doèasnı název fotografie a~druhı argument obsahuje cestu k~novému úloišti vèetnì celého, pùvodního názvu fotografie. Pro monost zobrazení fotografie na stránce, tak jak to potøebujeme, je nutné uloit záznam o~ní do databáze. K~tomu úèelu vyuijeme SQL pøíkazu: \texttt{INSERT\;into\;images\;(file\_name,\allowbreak\;uploaded\_on)\allowbreak\;VALUES (\$fileName, NOW())}, kterı nám vloí do tabulky \texttt{images} jméno souboru vèetnì cesty k~nìmu a~èasovou znaèku tohoto úkonu.^{[6]} \par
+
+V~pøípadì, e nastane situace, kdy exif soubor nebude obsahovat zemìpisné souøadnice, bude uivatel vyzván k~zadání souøadnice pøímo z~mapy a~fotografie bude následnì pøiloena k~tomuto pøípadu. \par
+
+\subsubsection{Definování map a~získávání pozice}
+
+Jeliko je náš projekt z~vìtší èásti postaven na práci s~aplikací google maps API, je nutné popsat naši práci s~ní. Kadá mapa musí bıt definována v~zásadì dvìma skripty pomocí javascriptu. Jeden skript sestává ze samotného definování mapy, to znamená, jak se má mapa chovat a~jak má vypadat. Druhım skriptem pouze odkazujeme na vlastní javascriptovou aplikaci googlu, která nám dovolí zobrazit google mapu jako takovou. \par
+
+Prvním druhem mapy pouitım v~projektu je èistá mapa, z~ní uivatel vybírá pøesnou pozici. Tato mapa je pouita v~pøípadì, kdy uivatel nahlašuje událost pøímo bez fotografie a~kdy se v~prùbìhu nahlašování s~fotografií ukáe, e nahraná fotografie neobsahuje údaje o~poloze. Díky její definici je tato mapa schopna vytváøet špendlíky na místa, kde uivatel klikne, o~co se stará tato funkce: \par
+\begin{verbatim}
+google.maps.event.addListener(map, 'click', function (event) {
+	    	if (marker != null) {
+	    	    	marker.setMap(null);
+	    	}
+	    	marker = new google.maps.Marker({
+	    		position: event.latLng,
+	    		map: map,
+		});
+\end{verbatim} \par
+Nejdøíve odstraní všechny špendlíky na mapì, byly-li nìjaké døíve vytvoøeny. Následnì na pozici kliknutí vytvoøí špendlík novı. Toto øešení tedy umoòuje uivateli upravit vybranou polohu.^{[7]} \par
+
+Druhım druhem mapy je mapa, která se zobrazí pouze v~pøípadì, e uivatel nahlašuje pøípad s~pouitím fotografie, která obsahuje správné GPS údaje. Na mapì se zobrazí špendlík na pozici, kterou jsme získali z~exif souboru dané fotografie a~mapa bude pøiblíena v~dostateèné míøe, aby uivatel mohl pohodlnì upøesnit pozici, která nebıvá stoprocentnì pøesná. V~moment kliknutí, kterım uivatel upøesní pozici, zmizí pùvodní špendlík a~vytvoøí se novı, pøesnì jak tomu je u~mapy prvního typu. \par
+
+První dva typy map tedy jako svùj vıstup mají zemìpisné souøadnice, které musí bıt uloeny pro jejich pozdìjší zpracovávání. Uloení souøadnic dosáhneme pomocí funkce \textit{getlatitude()}: \par
+\begin{verbatim}
+function getlatitude() {
+			    var latitude = event.latLng.lat();
+			    document.getElementById("lat").setAttribute('value', latitude);
+		}
+		getlatitude();
+\end{verbatim}
+Tato funkce si zjistí zemìpisnou šíøku kliknutí a~uloí si ji do promìnné. Následnì vyhledá v~dokumentu element s~identifikátorem „lat“ a~nastaví jeho hodnotu na hodnotu promìnné, do které si uloila zemìpisnou šíøku. V~našem pøípadì je tímto elementem formuláøovı input typu „text“, kterı je nastavenı pouze pro ètení. Pøesnì analogicky je tomu u~zemìpisné šíøky. Takto mohou tedy formuláøe obdret informaci o~poloze a~následnì ji uloit do databáze.^{[8]} \par
+
+Tøetí typ mapy je odlišnı od dvou pøedchozích, protoe je zamìøen spíše na vıstup ne na vstup. Tento typ jsme pouili v~galerii pro vıpis špendlíkù do mapy s~pomocí údajù o~polohách kadého záznamu v~databázi. Zaèneme tedy získáním dat z~databáze pomocí SQL pøíkazu: \texttt{SELECT\;latitude,\allowbreak\;longitude\allowbreak\;FROM\;aboutphenomenon}. Ten nám zjistí údaje o~poloze ke kadému jednomu špendlíku. Následnì vytvoøíme pole a~do nìj pomocí cyklu necháme vepsat zemìpisné údaje po dvojicích, tj. zemìpisnou šíøku a~délku. Jeliko jsme chtìli, aby se pøi kliknutí na samotnı špendlík zobrazily informace o~nìm, tak bylo nutno získat pomocí dalšího SQL pøíkazu všechny potøebné informace o~daném nahlášení, které je tedy symbolizováno danım špendlíkem. Tyto údaje jsme zpracovali stejnım zpùsobem, jakım jsme si ukládali zemìpisné souøadnice daného špendlíku, zde jen nebyly uloeny po dvojicích, ale jako jeden údaj pro jedno nahlášení. Následnì ji bylo nutno jen vytvoøit v~mapì špendlíky na pozicích získanıch z~databáze a~pøi jeho vytvoøení k~nìmu uloit informace získané takté z~databáze. Uloení informací ke kadému špendlíku jsme docílili pøidáním funkce, která pøi kliknutí na danı špendlík zobrazí nad ním okno, ve kterém se zobrazí informace získané pøi vytváøení špendlíku.^{[9]} \par
+
+Kadá definice mapy ji umisuje do daného elementu na stránce stejnım zpùsobem, jako se zemìpisné souøadnice vybrané z~mapy vepisují do formuláøe. \par
+
+\subsubsection{Získávání adresy ze zemìpisnıch údajù}
+Zejména v~galerii, kde zobrazujeme ji nahlášené pøípady, je nutné udávat pozici ne v~zemìpisnıch koordinátech, které bìnému èlovìku nic neøeknou, ale v~nìjaké formì, která je pro èlovìka pøirozená, bylo tedy nutné pøevést geografické údaje na adresu. Toho jsme docílili uitím google geocode API, co je sluba, které kdy dáme k~dispozici zemìpisné souøadnice, tak nám vytvoøí tzv. json soubor, co je logicky uspoøádanı textovı soubor. Toho docílíme pomocí funkce \texttt{file\_get\_contents()} a~jako argument pro ni pouijeme url adresu, ve tvaru v~jakém ji poaduje aplikace google geocode API, do které pouze dosadíme své získané souøadnice. Tento soubor si musíme pøevést do pole pomocí funkce \texttt{json\_decode()} a~jako argumenty pouijeme vıstup z~funkce \texttt{file\_get\_contents()} a~druhım argumentem bude \texttt{true}, èím se dekóduje celı soubor a~pøevede se do pole. \par
+
+Jeliko json soubor vytvoøenı aplikací google geocode API je strukturovanı podle stálého klíèe, staèí nám u jen uloit do promìnnıch postupnì název mìsta, kraje a~ulice. Poté musíme uloit do databáze takto získané údaje pomocí SQL pøíkazu \par
+\begin{verbatim}
+  INSERT INTO redablepossition(city, region, street, idphenomenon) 
+  VALUES ($city, $region, $street, $idphenomenon).
+\end{verbatim} \par
+Promìnná \textit{idphenomenon} zde slouí jako primární klíè, aby bylo mono pøiøadit adresu k~nahlášenému problému. \par
+
+Dále vyuijeme google geocode API k~posouzení, zda fotografie byla vyfocena na správném místì a~zda byla poloha z~mapy vybrána správnì, nebo se uivatel jen pokouší nahrát pozici, na které se zaruèenì ádná silnice nenachází. Toho lze jednoduše dosáhnout ovìøením, zda vygenerovanı json soubor splòuje jisté náleitosti. Jako pøíklad poslouí jednoduchá podmínka: \texttt{(\;\$decodeddata[\;"status"\;]\;==\;\newline "OK"\;)}. Ta je splnìna, pokud status souboru json má hodnotu \texttt{OK}, pøièem údaje o~statusu tohoto souboru jsou obsaeny pøímo v~nìm. \par
+
+\subsubsection{Struktura formuláøe}
+První dvì poloky našeho formuláøe tıkající se souøadnic se vyplní pøi nahrání fotografie s~platnımi souøadnicemi nebo pøipnutím špendlíku na naší mapì, proces získávání souøadnic je ji zmínìn vıše. \par
+
+Pøi nahrávání problému pøes formuláø s~mapou je na poèítaèi obrazovka rozdìlena na dvì poloviny, oddílu s~mapou urèíme šíøku 70 vw a~oddílu s~formuláøem 30vw. Obalu nastavíme \texttt{display:flex}, pøièem pro mobilní zaøízení nastavíme pozici elementù pod sebe. \par
+
+Poloky z~vıbìru problémù vypisujeme z~databáze SQL pøíkazem \texttt{\$sql =\;"SELECT\allowbreak issuename,\allowbreak\;issueid\allowbreak\;FROM\;issues"}, jednotlivì je vypisujeme dle abecedy (kromì poloky „jiné“, jì si ukládáme do promìnné a vypisujeme ji nakonec) do vıbìru pomocí cyklu for. Poloky vıbìru akutnosti prozatím nevypisujeme z~databáze, zde nám tedy postaèí pole s~názvy poloek a~cyklus for. \par
+
+Všechny poloky první èásti formuláøe mají pøidìlenou tøídu \textit{border\_label}, které pomocí CSS definujeme 1,8px pevnı šedı okraj barvy rgba(47,58,86,.3), se zaoblením rohù o~5 px. Pøidáme také \texttt{margin-top:\;.3rem} a~\texttt{padding:.3rem}. Pro lepší kontakt s~uivatelem zde také pøidìlíme vzhled pro najetí myší, necháme ztmavit okraj tøídy. Pøidáme i~ještì vìtší ztmavení okraje pøi zakliknutí poloky. \par
+
+\subsubsection{Další prvky formuláøe}
+
+Dalším prvkem našeho formuláøe jsou pøepínaèe. Obsah jednotlivıch pøepínaèù vypisujeme ze seznamu \texttt{specials} v~naší databázi. Všechny monosti máme v~oddílu o~tøídì s~názvem \textit{checks} zapsány jako poloky seznamu. Tøídì \textit{checks} definujeme relativní pozici a~zobrazení do bloku, seznamu a~polokám v~nìm nastavíme styl seznamu ádnı, vše se tedy zobrazí jako prostı text. Jako písmo pro celou tøídu zvolíme \textit{Roboto}. \par
+
+Kadá poloka seznamu obsahuje input typu radio, jméno nastavíme všem na \textit{specid}. Abychom je odlišili, hodnotu value a~id bude udávat \textit{specid} jednotlivıch poloek dle údajù z~databáze. Obsahuje štítek s~názvem øádku specifikace a~oddílu, kterému pøidìlíme tøídu \textit{check}, do které ještì vloíme tøídu \textit{inside}. \par
+
+Nezvolené poloky vypadají všechny stejnì. Pro kadou poloku seznamu máme v~CSS nastavenou šedou barvu obsahu odstínu \#949494, zobrazení do bloku, relativní pozici, zarovnání vlevo a~100\% šíøku. \par
+
+Tøídou \textit{check} oznaèujeme ètverce, které se pøi zatrhnutí poloky seznamu vyplní a~odliší se tím od ostatních. Této tøídì tedy nadefinujeme šíøku a~vıšku o~velikosti 1 rem, zobrazení do bloku a~pevnı okraj o~šíøce 3 px a~barvì \#949494. Zaoblení rohù nastavíme na 10 \%. \par
+
+Abychom vidìli vıplò pøi zvolení monosti, pøidáme zápis i~pro \texttt{check:before}, tento pseudo-element pøidává naší tøídì další prvek. Opìt nastavíme zobrazení do bloku, absolutní pozici. Pro obsah nastavíme \texttt{content:\;''}, tøída je bez vıplnì, vidíme jen produkt CSS. Zaoblení rohù necháme na 0 a~co je hlavní, aby byl náš ètverec usazen do okraje tøídy \textit{checks}, nastavíme mu vıšku a~šíøku na 0,5 rem, vzdálenost zleva a~z~vrchní strany 0,25 rem a~\texttt{margin:\;auto}. \par
+
+Pro zviditelnìní oznaèené poloky formuláøe zmìníme pro \texttt{.checks input[type=\newline radio]:checked ~\;.check} barvu okraje na tavì modrou o~odstínu \#406D96. Znaèka nám urèuje, e pøíkaz platí pouze pro pøímého následovníka rodièe, tedy pokud by naše tøída \textit{check} byla obsaena ještì v~jiném oddìlení, pøíkaz pro ni platit nebude. Toto nám zpeèeuje, e zviditelnìní oznaèené poloky bude aplikováno pouze na této poloce. Tu samou barevnou zmìnu aplikujeme i~na celı oznaèenı štítek a~\texttt{.checks input[type=radio]:checked ~\;.check::before}. \par
+
+\begin{figure}[H]
+\centering
+  \includegraphics[scale=1]{oznacenaaneoznacenapolozka-checks.jpg}
+  \caption{Oznaèená a~neoznaèená poloka formuláøe}
+  \label{fig:form}
+\end{figure}
+
+Oznaèenou poloku máme tedy tmavì modrou s~vıplní a~neoznaèenou ji máme šedou bez vıplnì. Aby byl pøechod mezi tìmito dvìma stavy hladkı, pøidáme pro \textit{.checks ul li label}\allowbreak \texttt{ -webkit\allowbreak -\allowbreak transition:\allowbreak\;all\;0.25s\;linear}, pro \textit{.checks ul li .check} \texttt{transition:\allowbreak\;border\;.25s\;linear} a~\texttt{\allowbreak -webkit\allowbreak -\allowbreak transition:\allowbreak\;border\;.25s}\;linear, pro\;\textit{.checks \allowbreak ul \allowbreak li \allowbreak  .check::before}\;\texttt{transition:\allowbreak\;background\allowbreak\;0.25s\;linear} a~také \texttt{-webkit-transition:\newline background\allowbreak\; 0.25s\;linear}. Tyto pøechody se stejnou rychlostí od zaèátku do konce zpomalí prùbìh zmìny, a tak je pohled na zmìnu prvku pøíjemnìjší a formuláø nepùsobí na uivatele pøíliš obyèejnì.^{[10]} \par
+
+Nakonec jen pøidáme polokám seznamu i~s~oddílem \textit{checks} hover, aby poloky interagovaly s~pøejetím myši. Barvu hoveru nastavíme na tmavší odstín šedé \#666666. \par
+
+Posledním popisovanım prvkem formuláøe jsou tlaèítka. Stisknutím tlaèítka „Další“ v~php získáme informaci o~zvolenıch polokách, na jeho základì dále zobrazujeme specifikaci problémù. K~tlaèítku nahrát si pøipíšeme pro kadou informaci skrytı vstup se jménem, pod kterım informace máme ve formuláøi i~v~databázi o~hodnotì vıstupu z~formuláøe, pøes kterı v~dalším kroku vloíme informace do databáze SQL pøíkazem. \par
+
+Obìma tìmto tlaèítkùm definujeme stejnı styl, tedy pozadí støedního odstínu modré \#406D9, písmo 'Roboto' o~velikosti 1 rem a~bílé barvì. \texttt{Padding} urèíme 0,5rem z~vrchu a~zespoda, .8rem zleva a~zprava. Nakonec necháme rohy tlaèítek zaoblit o~3 px. \par
+
+\subsection{Galerie}
+Pro zobrazení galerie si zavedeme v~naší knihovnì funkci \textit{thegallery}. Hned na zaèátku definujeme, e se obsah zobrazí pouze v~sekci \textit{gallery}: \texttt{if (\$section\;==\;"gallery")}. První polokou v~naší galerii má bıt mapa, zavedeme si tedy oddíl s~id \textit{galmap}. Po tomto oddílu si vyádáme náš soubor second-map-definition.php. Viz kapitola 3.2.5 Definování map a~získávání pozice. \par
+
+Po mapì následuje vyhledávací pruh, ve kterém má uivatel monost vıpisy tøídit nebo pøímo vyhledávat podle vlastního zadání. Vyhledávacímu pruhu pøidìlíme id \textit{gall\_menu}. Vyhledávání rozdìlíme na tøídící èást a~èást vlastního hledání, vytvoøíme si tedy dva oddíly tøídy \textit{gall\_menu\_item}. V~prvním bude umístìno tøídìní, v~druhém vyhledávání. \par
+
+Pro vyhledávání vytvoøíme jednoduchı formuláø, do pole akce napíšeme název stránky se sekcí galerie, metodu zadáme \texttt{get}. Pokraèujeme \texttt{<input type="text"\;id=\newline "search\_label"\;name="hledat"\textgreater\allowbreak<input type="submit"\;name="search\_for"\;id=\newline " search\_for"\;value="vyhledat"\textgreater\allowbreak<input\allowbreak \;type=\allowbreak "hidden"\allowbreak\;name=\allowbreak"section"\;value=\newline "gallery"\textgreater}. Nakonec formuláø zakonèíme druhou znaèkou z~páru. \par
+
+K~vyhledávání napíšeme php kód, ve kterém urèíme, e se pøi vyhledávání neprázdné skupiny znakù na stránce zobrazí vıpisy, kde kraj nebo mìsto tuto skupinu obsahují. Pokud uivatel vyhledávání nevyplní a~stiskne tlaèítko vyhledat, zobrazí se celı obsah galerie, jako obvykle. \par
+
+U~tøídìní pøíspìvkù v~galerii vyuijeme stejnı princip pro vıpis z~databáze do selection formuláøe, jako ve formuláøi pro nahrávání. SQL dotazem zaøídíme, aby se zobrazily pouze pøíspìvky, jejich issueid se rovná \$filter\_issueid, tady našemu vybranému prvku ve filtrování.
+
+Následuje oddíl s~id \textit{gallery\_content}, ve kterém bude náš obsah galerie. Pokud nebylo provedeno vyhledávání, vypíše se celı obsah galerie: na zaèátku tohoto oddílu se pøipojíme k~naší databázi, potom necháme z~databáze vypsat všechny pøípady podle SQL dotazu: 
+\begin{verbatim}
+    SELECT issues.issuename, specials.specname, images.file_name, 
+    aboutphenomenon.phenomenonurgency, aboutphenomenon.idphoto, 
+    aboutphenomenon.othertext, redablepossition.region, 
+    redablepossition.city, redablepossition.street 
+    FROM aboutphenomenon 
+    LEFT JOIN images ON aboutphenomenon.idphoto = images.idphoto 
+    LEFT JOIN redablepossition ON aboutphenomenon.idphenomenon =
+    redablepossition.idphenomenon 
+    LEFT JOIN issues ON aboutphenomenon.issueid = issues.issueid 
+    LEFT JOIN specials ON aboutphenomenon.specid = specials.specid
+    WHERE aboutphenomenon.del=0 
+    ORDER BY aboutphenomenon.idphenomenon DESC
+\end{verbatim}
+K~vıpisu nám slouí funkce \textit{writeGallery}, která vypíše pøípady podle daného SQL dotazu, a u je to filtrování, vyhledávání nebo celı obsah galerie. Kadı pøípad bude ve vlastním oddílu tøídy \textit{gallery\_element} kde bude vypsán kraj, mìsto, ulice, druh problému, jeho specifikace a~komentáø uivatele. Obsahuje-li zápis fotografii, zobrazí se i~ona. U kadého problému je také tlaèítko „Vyøešeno“, kterım v galerii vyøešenı pøípad skryjeme. Abychom tento pøípad nesmazali z naší databáze, nepouíváme SQL dotaz \texttt{DELETE}, avšak zavedli jsme si u kadého pøípadu v tabulce kolonku „del“, její vıchozí hodnota je 0. Tlaèítkem „Vyøešeno“ tuto hodnotu aktualizujeme pomocí SQL dotazu \texttt{UPDATE aboutphenomenon SET del = 1 WHERE aboutphenomenon.idphenomenon=\newline \$helpidphenomenon} na 1. Protoe máme nastaven pouze vıpis pøípadù, jejich hodnota kolonky „del“ je 0, vyøešené pøípady se nezobrazí, avšak zùstanou v naší databázi, pro pøípad, e by došlo k nechtìnému smazání.
+\par
+\begin{verbatim}
+	while ( $row = mysqli_fetch_assoc( $result ) ) {
+		print( "<div class=\"gallery_element\">
+		<h4>" . $row[ "city" ] . "–" . $row[ "issuename" ] . "</h4><p>
+		Kraj: " . $row[ "region" ] . "<br>Mìsto: " . $row[ "city" ] . ", 
+		na ulici: " . $row[ "street" ] . 
+		"<br>Povaha situace: " . $row[ "issuename" ] . 
+		"<br>Specifikace: " . $row[ "specname" ] );
+		if ( $row[ "othertext" ] != "" ) {
+			print( "<br>Vlastní komentáø uivatele: " . $row[ "othertext" ]
+			. "</p>" );}
+		if ( $row[ "idphoto" ] != 0 ) {
+			print( "</br>" . "<div class=\"fotovgalerii\"><img src=$url alt=\"\"
+			/></div>" );	}
+			print( "<div><form action=\"index.php?section=gallery\" 
+			method=\"post\"><input type=\"submit\" name=\"done\" id=\"donebtn\" 
+			value=\"? vyøešeno\"><input type=\"hidden\" name=\"helpidphenomenon\"  
+			value=". $row[ "idphenomenon" ] ." ></form></div>" );
+					print( "</div>" );
+		print( "</div>" );
+	}
+\end{verbatim}\par
+
+\subsubsection{Vzhled galerie}
+Pro vzhled galerie máme vytvoøen speciální soubor \texttt{gallery.css}. \par
+
+Oddíl s~mapou nastavíme na 100\% šíøku a~vıšku na 45 vıškovıch bodù pro mobilní zaøízení, pro poèítaèe bude tento oddíl vysokı 60 vıškovıch bodù. \par
+
+Oknùm tøídìní i~vyhledávání a~jejich tlaèítkùm nastavíme stejnı vzhled, aby k~sobì ladily. Pozadí oddílu, ve kterém jsou, nastavíme modré, jejich okraj zmìníme na bílı a~rohy okraje zaoblíme o~3 px. Písmo zvolíme \textit{Roboto} o~velikosti 0,9 rem. Obì vyhledávání jsou ve stejnojmenném oddílu, jejich obal tvoøí flex, v~poèítaèovém zobrazení jsou vnitøní oddíly vedle sebe díky \texttt{flex-direction:\;row}, v~mobilním zobrazení od sebou díky \texttt{flex-direction:\;column}. \par
+
+Oddílu s~obsahem galerie pøidìlíme id \textit{gallery\_content}, kterému, pro zjednodušení práce a definování mobilního zaøízení, urèíme \texttt{display:\;flex}. V~mobilních zaøízeních nastavíme zobrazení jednotlivıch zápisù pod sebou, v~poèítaèi vedle sebe se zalomením na další øádky. Kadı zápis je ve tøídì s~názvem \textit{gallery\_element}, jí pøidìlíme šedı okraj \texttt{border:\;rgba(47,58,86,.1)\;1px\;solid}. Na mobilních zaøízeních tento okraj nastavíme pouze pro vrchní a~spodní stranu oddílu. \par
+
+\subsection{Stránka O~projektu}
+Stránka „O~projektu“ je v~naší knihovnì ve funkci \textit{aboutproject}, na jejím zaèátku definujeme, e se obsah zobrazí, pouze kdy \texttt{\$section\;==\;"about"}. \par
+
+Struktura stránky „O~projektu“ je shodná s~domovskou stránkou, pouze jsme zde zamìnili texty, vıška obrázku je menší a~nejsou zde tlaèítka. Pro všechny prvky jsme si kvùli tìmto odlišnostem vytvoøili nová id, která jsme v~CSS pøidali ke stylùm u~domovské stránky a~odlišnosti pak jednotlivì zmìnili. \par
+
+\subsection{Stránka nápovìdy a~nahlášení}
+Pro zobrazení stránky nápovìdy a~nahlášení máme funkci \textit{HelpReport}, která se bude zobrazovat, bude-li uivatel v~sekci \textit{help}. Sem nás budou posílat odkazy z~patièky, které jednotlivì smìøují do oddílù na této stránce. \par
+
+Vytvoøíme si zde oddíl s~id \textit{helpbg}, kterému v~CSS nadefinujeme pozadí pøes celou šíøku a~jako pozadí zvolíme náš soubor se SVG otazníky. V~tomto oddílu vytvoøíme oddíl s~id \textit{help}, kam bude uivatel pøesmìrován po kliknutí na odkaz „Potøebujete pomoci?“, oddíl s~id \textit{uploadproblems}, kam bude uivatel pøesmìrován pro kliknutí na odkaz „Potíe s~nahráváním“ a~oddíl s~id \textit{report}, ke kterému vede odkaz „Nahlásit chybu systému“. Uvnitø všech tìchto oddílù je nadpis tøetí úrovnì a~text. \par
+
+V~posledním oddílu je navíc formuláø pro odeslání zpìtné vazby od uivatelù, ten povede do databáze zpìtnıch vazeb. Zde jsme si pro to vytvoøili pole pro e-mail uivatele a~textové pole pro text hlášení, kterému jsme pøidali námi ji døíve nastylovanou tøídu \textit{border\_label}. \par
+\begin{figure}[H]
+\centering
+  \includegraphics[width=\textwidth]{obrazekosm.jpg}
+  \caption{Stránka nápovìdy a~nahlášení.}
+  \label{fig:pomoc-strana}
+
+\end{figure}
+\newpage
+\section{ZÁVÌR}
+
+Závìrem bychom rádi shrnuli, èemu jsme se v~této práci vìnovali a~nastínili moné budoucí implementace do praxe a~budoucí vıvoj aplikace.\par
+
+V~práci jsme se vìnovali obecnému fungování naší aplikace a~principùm, na nich je vystavìna. Napøíklad jsme rozebrali, jak fungují naše formuláøe, jak funguje nahrávání fotografií a~jak se vytváøí mapy za uití aplikace google maps API. Obšírnì jsme rozebírali základní funkci našeho webu, jí je získávání zemìpisnıch údajù, a~to jak z~fotografií, tak pøímo z~mapy a~kombinací tìchto metod. V~neposlední øadì je velmi dùleitou èástí celého projektu jeho design, kterému byly vìnované mnohé kapitoly.\par
+
+Budoucí rozvoj aplikace lze pojmout z~nìkolika pohledù a~je nyní obtíné pøedpovídat, jakım smìrem se nakonec vydá. Mohu však nastínit pár monıch vylepšení a~cest. Bylo by vhodné nechat uivatele v~galerii nahlášenıch pøípadù hlasovat o~relevantnosti kadého z~nich a~v~momentì, kdy by nìjakı pøíspìvek mìl více ne urèitı poèet negativních hodnocení, tak by se automaticky skryl a~na správci by bylo osobnì rozhodnout o~relevanci takového pøípadu. S~tím souvisí také monost automaticky generovat e-maily obsahující vıèet nejvíce kladnì hodnocenıch pøípadù a~odesílat je správcùm silnic, aby mìli pøehled tìch nejurgentnìjších pøípadù. V~tomto bodì by však bylo nutné s~danım orgánem uèinit o~této aktivitì dohodu, aby tato aktivita nebyla brána pouze jako obtìující, ale jako aktivita, která má opravdu nìco zlepšit a~nìèemu pomoci. Dále by byla moná celosvìtová rozšiøitelnost aplikace, co by vyadovalo krom vícejazyèné lokalizace aplikace i~zjišování polohy uivatele, aby se mapa mohla zamìøit právì na jeho zemi a~vyøešit pøidávání znaku „mínus“ v~pøípadì e získáváme souøadnice z~fotografie vyfocené na jiní, èi západní polokouli. Nejvyuitelnìjší pokrok vidím však v~pøidání tlaèítka „zadat do navigace“, pomocí kterého by pracovníci správy komunikací mohli pohodlnì vybrat z~galerie pøípad a~pøímo z~ní se nechat navigovat na pøesnou pozici na mapì.\par
+
+\newpage
+
+
+\begin{thebibliography}{20}
+
+\bibitem{PHP} PHP základy. Tvorba-webu.cz [online]. Brno: Webdesign - Adaptic, ©2003-2008 [cit. 2019-03-19]. Dostupné z: https://www.tvorba-webu.cz/php/
+\bibitem{JavaScript} Javascript - úvod. Jakpsatweb.cz [online]. Praha 5: jakpsatweb.cz, neuvedeno [cit. 2019-03-19]. Dostupné z: https://www.jakpsatweb.cz/javascript/javascript-uvod.html
+\bibitem{frost} FROST, Brad. Responsive Web Design Patterns. This Is Responsive [online]. Pittsburgh: github.com, ©2019 [cit. 2019-03-19]. Dostupné z: https://bradfrost.github.io/this-is-responsive/patterns.html
+\bibitem{upload} Upload and Store Image File in Database using PHP and MySQL. CodexWorld [online]. -: CodexWorld, 2018 [cit. 2019-03-19]. Dostupné z: https://www.codexworld.com/upload-store-image-file-in-database-using-php-mysql/
+\bibitem{yanitsky} YANITSKY, Alexander. Getting photograph geo coordinates in PHP. Janicky.com [online]. Londın: janicky.com, ©2019 [cit. 2019-03-19]. Dostupné z: http://janicky.com/en/articles/getting-photograph-geo-coordinates-in-php/
+\bibitem{apigoogle1} Maps JavaScript API. Google Maps Platform [[online]. Kalifornie: google.com, 2019 [cit. 2019-03-19]. Dostupné z: https://developers.google.com/maps/documentation/javascript/tutorial
+\bibitem{apigoogle2} Capture Coordinates in Google Map on User Click. Stack Overflow [online]. New York: stackoverflow.com, ©2019 [cit. 2019-03-19]. Dostupné z: https://stackoverflow.com/questions/19087352/capture-coordinates-in-google-map-on-user-click
+\bibitem{apigoogle12} Maps JavaScript API. Google Maps Platform [[online]. Kalifornie: google.com, 2019 [cit. 2019-03-19]. Dostupné z: https://developers.google.com/maps/documentation/javascript/tutorial
+\bibitem{markers} Adding Multiple Markers with Info Windows to Google Maps Dynamically from Database. CodexWorld [online]. -: CodexWorld, 2018 [cit. 2019-03-19]. Dostupné z: https://www.codexworld.com/adding-multiple-markers-with-info-windows-to-google-maps-dynamically-from-database/
+\bibitem{velasquez} VELASQUEZ, Angela. CSS radio buttons. CodePen [online]. Bend, USA: codepen.io, ©2019 [cit. 2019-03-19]. Dostupné z: https://codepen.io/AngelaVelasquez/pen/Eypnq
+
+
+
+\end{thebibliography}
+\bibliography
+
+\newpage
+
+\listoffigures
+
+\end{document}

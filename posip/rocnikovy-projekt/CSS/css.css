@@ -1,0 +1,424 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+body {
+	font-family: 'Roboto', sans-serif;
+}
+h1 {
+	font-family: "Roboto", "sans-serif";
+	font-size: 3rem;
+}
+h2 {
+	font-family: "Arimo", "sans-serif";
+	font-size: 1rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	padding: .5rem;
+}
+h3 {
+	font-family: "Arimo", "sans-serif";
+	font-size: 1.3rem;
+	text-align: center;
+	padding: 1.5rem 0 1rem 0;
+	
+}
+.error{
+	font-size: .8rem;
+	color: #7A0E0F;
+	padding: .3rem;
+}
+#content {
+	margin-top: 2vh;
+	top: 2vh;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+}
+.flex-element:nth-of-type(odd) {
+	bottom: 0;
+	width: 100%;
+}
+.flex-element:nth-of-type(even) {
+	margin: 1rem;
+	width: 100%;
+}
+.guidepost, .guidepostabout {
+	background-image: url(../obrazky/map55.svg);
+	margin-top: 0px;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-position: top;
+	align-content: center;
+	color: #2f3a56;
+	text-align: center;
+}
+.guidepostabout {
+	height: 200px;
+}
+.guidepostabout h1 {
+	font-size: 2rem;
+}
+
+#guidetxt {
+	text-align: center;
+	padding: 1rem;
+	padding-top: 2.5rem;
+}
+button:focus{
+	
+	outline: none;
+}
+
+#upbtn, #visitbtn, #helpbtn, #ohnephoto, #mitphoto {
+	color: #fff;
+	padding: .3rem 0 1rem 0;
+	height: 105px;
+	width: 105px;
+	background: #fff;
+	text-transform: uppercase;
+	border: rgba(255,255,255,1.00) 3px dotted;
+	border-radius: 100%;
+	font-family: 'Arimo', sans-serif;
+	font-size: .7rem;
+	font-weight: 500;
+	cursor:pointer;
+}
+#upbtn:focus, #visitbtn:focus, #helpbtn:focus, #ohnephoto:focus, #mitphoto:focus{
+	outline: none;
+}
+#upbtn {
+	background-color: #3fbc87;
+}
+#helpbtn {
+	background-color: #4AB3BE;
+}
+#visitbtn{
+	background-color: #E2474B;
+}
+	#mitphoto {
+	background-color: rgba(32,40,59,1.00);
+}
+#upload-icon, #gallery-icon, #question-mark, #pin-icon, #image-icon {
+	padding-bottom: .3rem;
+}
+.galleryicon, .uploadicon, .helpicon, .imageicon {
+	fill: #fff;
+}
+.pin-map{
+	fill:#2f3a56;
+}
+#index-buttons {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.index-btnnav {
+	margin: 1rem;
+	cursor: pointer;
+}
+
+#uploadbtn{
+	margin: .3rem;
+	margin-bottom: .5rem;
+    font-size: 1rem;
+    font-family: 'Roboto';
+}
+
+#ohnephoto {
+	color: #2f3a56;
+	border: #2f3a56 3px dotted;
+}
+#upload_photo_div {
+	padding: 2rem 0;
+	margin:0 auto;
+}
+#upload_photo_div form{
+	width:auto;
+	margin: 0 10%;
+}
+#uploadimg{
+	background: #406D96;
+	font-family: 'Roboto', sans-serif;
+	font-size: .9rem;
+	color: #fff;
+	padding: .3rem .8rem;
+	border-radius: 100px;
+	border:#406D96 solid 1.5px;
+}
+#choosefile input{
+	background: #406D96;
+	font-family: 'Roboto', sans-serif;
+	font-size: .9rem;
+	color: #fff;
+	padding: .3rem .8rem;
+	border-radius: 3px;
+	border:#406D96 solid 1.5px;
+}
+#content button {
+	padding-top: 1rem;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	padding: .7rem 1rem;
+	border-radius: 200px;
+	margin-top: .8rem;
+}
+.content form{
+	margin-left:1rem;
+	margin-bottom:.5rem;
+}
+#question {
+	padding-top: .5rem;
+	padding-bottom: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+#question button {
+margin:1rem;
+}
+#ohnephoto {
+	font-weight: 650;
+}
+#upload_mit_ohne,#about {
+	margin: 0 5%;
+}
+
+	
+#help {
+	padding: 1rem 5% 1rem 5%;
+}
+#helpbg {
+	background-image: url(../obrazky/mobilehelpbg.svg);
+	margin-top: 23px;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-position: bottom;
+	align-content: center;
+}
+#report .border_label{
+	padding:.3rem;
+	margin-bottom: .5rem;
+	font-family: 'Roboto', sans-serif;
+	background: none;
+}
+#toreport_button{
+		background: #406D96;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	color: #fff;
+	padding: .5rem .8rem;
+	border: none;
+	border-radius: 3px;
+}
+#first_form div{
+	padding:.3rem;
+	font-size: 1rem;
+	font-family: 'Roboto', sans-serif;
+}
+#first_form label{
+	padding:.3rem;
+	font-size: 1rem;
+	font-family: 'Roboto', sans-serif;
+}
+.border_label{
+	background-color: #fff;
+	padding:.3rem;
+	border:rgba(47,58,86,.3) 1.8px solid;
+	border-radius: 5px;
+	margin-top: .3rem;
+}
+
+.border_label:hover{
+	border:rgba(47,58,86,.5) 1.8px solid;
+	
+}
+.border_label:focus{
+	border:rgba(47,58,86,.8) 1.8px solid;
+	
+	outline: none;
+}
+
+footer {
+	background-color: #406D96;
+	bottom: 0;
+	
+}
+#footerflex {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: 0 5%;
+}
+.footer_flex_element p {
+	padding: .5rem .3rem .5rem .3rem;
+	text-decoration: none;
+	color: #fff;
+	background: none;
+}
+.footer_flex_element {
+	border-bottom: solid rgba(47,58,86,0.80) 1px;
+	padding: .8rem 0;
+}
+footer ul {
+	list-style: none;
+	background: none;
+}
+.footer_flex_element a {
+	text-decoration: none;
+}
+
+@media screen and (min-width: 720px) {
+h1 {
+	font-family: "Arimo", "sans-serif";
+	font-size: 4rem;
+}
+h2 {
+	font-family: "Arimo", "sans-serif";
+	font-size: 1.3rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	padding: .5rem;
+}
+
+	h3 {
+	font-family: "Arimo", "sans-serif";
+	font-size:2rem;
+	text-align: center;
+	padding: 2rem 0 1.5rem 0;
+}
+.guidepost, .guidepostabout {
+	background-image: url(../obrazky/map55.svg);
+	margin-top: 21px;
+	width: 100%;
+	height: 400px;
+	background-size: cover;
+	background-position: bottom;
+	align-content: center;
+}
+.guidepostabout {
+	height: 250px;
+	background-position: center;
+}
+#index-buttnos{
+		margin-top:1rem;
+	}
+#guidetxt {
+	text-align: center;
+	padding: 3rem 1rem 1rem;
+}
+#guidetxt h2 {
+	padding-bottom: 2rem;
+}
+.guidepostabout h1 {
+	font-size: 3rem;
+}
+
+#upbtn:hover {
+	background-color: #3FBC70;
+}
+#helpbtn:hover {
+	background-color: #40A9B4;
+}
+#visitbtn:hover{
+	background-color: #E03C41;
+}
+	#mitphoto:hover {
+	background-color: rgba(26,32,47,1.00);
+}
+
+	#ohnephoto:hover{
+		background-color: rgba(223,223,223,1.00);
+	}
+#content button {
+	padding-top: 1rem;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	padding: .7rem 1rem;
+	border-radius: 200px;
+	margin-top: .8rem;
+}
+
+	#upload_mit_ohne, #about {
+	margin: 0 15%;
+	padding-top: 2rem;
+}
+	#about{
+		margin-bottom: 1.5rem;
+	}
+	#upload_photo_div {
+	margin: 0 15%;
+	padding: 2rem 0;
+}
+input {
+	padding: 5px;
+}
+img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+#content {
+	margin: 0;
+	
+	padding-top: 1.5rem;
+	top: 2rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	bottom: 0;
+}
+.flex-element:nth-of-type(odd) {
+	bottom: 0;
+	width: 70vw;
+}
+.flex-element:nth-of-type(even) {
+	margin: 1rem;
+	width: 29vw;
+}
+#help {
+	padding: 3rem 15% 3rem 15%;
+}
+#helpbg {
+	background-image: url(../obrazky/helpbg.svg);
+	margin-top: 23px;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-position: bottom;
+	align-content: center;
+}
+#uploadproblems, #report {
+	margin-top: 2rem;
+}
+#reporttxt {
+	border: rgba(64,109,150,1.00) 2px solid;
+}
+	/*FOOTER*/
+#footerflex {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0 20%;
+}
+.footer_flex_element {
+	padding: 1rem;
+	border: none;
+}
+.footer_flex_element p {
+	padding: 1rem .5rem 0 .5rem;
+}
+
+}
